@@ -1,0 +1,263 @@
+// Font family
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+// Color palette
+$colorOne : #606C5D;
+$colorTwo : #FFF4F4;
+$colorThree : #F7E6C4;
+$colorFour : #F1C376;
+
+@mixin iphone{ // Default
+    @media (min-width: 320px){
+        @content;
+    }
+}
+@mixin android{
+    @media (min-width: 480px){
+        @content;
+    }
+}
+@mixin tablets{
+    @media (min-width: 600px){
+        @content;
+    }
+}
+@mixin tabletsLandscape{
+    @media (min-width: 800px){
+        @content;
+    }
+}
+@mixin laptop{
+    @media (min-width: 1025px){
+        @content;
+    }
+}
+@mixin laptopHighRes{
+    @media (min-width: 1281px){
+        @content;
+    }
+}
+
+@mixin flex($flexDirection, $alignItems, $justifyContent){
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    body{
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+        .container{
+            height: 90vh;
+            z-index: -999;
+            background-color: $colorTwo;
+            @include flex(column, center, space-between);
+            @include android(){
+                height: 100vh;
+            }
+        }
+
+        //              => lOADING PAGE                        
+        .loading{
+            @include flex(column, normal, space-between);
+            background-color: $colorThree;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            transition: ease-in-out 1.2s;
+            opacity: 1;
+            div{
+                width: 100%;
+                height: 50%;
+                @include flex(row, center, center);
+                img{
+                    width: 60%;
+                    transform: scale(0%);
+                    transition: cubic-bezier(.35,.83,.04,.93) 1s;
+                    @include tablets(){
+                        width: 40%;
+                    }
+                    @include laptop(){
+                        width: 30%;
+                    }
+                }
+            }
+            div:last-child{
+                background-color: $colorOne;
+            }
+            p{
+                font-size: 0;
+                font-weight: 500;
+                color: $colorTwo;
+                transition: cubic-bezier(.35,.83,.04,.93) 1s;
+            }
+        }
+    }
+}
+
+header{
+    width: 70%;
+    margin-top: 20px;
+    @include flex(column, normal, unset);
+    @include android(){
+        width: 50%;
+    }
+    @include tablets(){
+        width: 40%;
+    }
+    @include tabletsLandscape(){
+        width: 30%;
+    }
+    @include laptop(){
+        width: 25%;
+    }
+    h1{
+        align-self: center;
+    }
+    div{
+        @include flex(row, center, space-between);
+        @include laptop(){
+            img, input{
+                box-shadow: 5px 5px 5px rgba($color: $colorOne, $alpha: 1.0);
+            }
+            img:hover, input:focus{
+                box-shadow: 0px 0px 0px rgba($color: $colorOne, $alpha: 1.0);
+                transform: translate(2px);
+                cursor: pointer;
+            }
+        }
+        img{
+            width: 15%;
+            height: 30px;
+            border-radius: 5px;
+            transition: 0.2s;
+            @include android(){
+                width: 40px;
+            }
+        }
+        input{
+            width: 70%;
+            color: black;
+            padding: 7px 10px;
+            border-radius: 5px;
+            letter-spacing: 3px;
+            border: solid 1px $colorOne;
+            background-color: $colorFour;
+            outline: none;
+            transition: 0.2s;
+        }
+        ::placeholder{
+            opacity: 0.8;
+            color: black;
+            letter-spacing: 3px;
+        }
+    }
+    //  => ERROR MESSAGE                                  
+    p{
+        padding: 5px;
+        display: none;
+        // display: ;
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: $colorTwo;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(245, 68, 68);
+        transition: 1s;
+    }
+}
+//  => CLASS TRANSITION                                    
+.popDown{
+    transform: translateY(2px) translateX(2px);
+    box-shadow: 0px 0px 0px rgba($colorOne, 0);
+}
+
+main{
+    display: flex;
+    max-height: 90vh;
+    min-height: 50vh;
+    @include android(){
+        width: 100%;
+        justify-content: space-between;
+    }
+    @include tablets(){
+        justify-content: space-evenly;
+    }
+    @include tabletsLandscape(){
+        justify-content: center;
+        .content{
+            padding: 0 50px;
+        }
+    }
+    .left-content,
+    .right-content{
+        padding: 5px;
+        width: 100px;
+        font-size: 0.8em;
+        text-align: center;
+        border-radius: 10px;
+        background-color: $colorThree;
+        @include flex(column, center, space-between);
+        @include android(){
+            width: 120px;
+        }
+        .near-you{
+            width: 100%;
+            padding: 5px 0;
+            color: white;
+            font-size: 0.6em;
+            text-align: center;
+            border-radius: 10px;
+            background-color: $colorOne;
+            @include android(){
+                font-size: 0.7em;
+                margin-bottom: 10px;
+            }
+        }
+        box-shadow: 0px 7px 5px -3px rgba($colorOne, $alpha: 0.5);
+        img{
+            align-self: normal;
+        }
+    }
+    .content{
+        @include flex(column, center, space-evenly);
+        transition: 0.2s;
+        .region{
+            p{
+                text-align: center;
+            }
+        }
+        img{
+            width: 150px;
+        }
+        .weather{
+            text-align: center;
+            h5{
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+footer{
+    padding: 5px 10px;
+    background-color: $colorFour;
+    p{
+        color: black;
+        font-size: 0.7em;
+        text-align: center;
+        a{
+            color: $colorOne;
+            text-decoration: none;
+        }
+    }
+}
