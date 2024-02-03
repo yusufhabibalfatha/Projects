@@ -4,12 +4,12 @@ This application is a mini blogger, its features are posting, editing posts, and
 
 
 ## Desktop view
-![Alt text](screenshots/ss-desktop-home.jpg)![Alt text](screenshots/ss-desktop-blog.jpeg)![Alt text](screenshots/ss-desktop-edit-blog.jpeg)![Alt text](screenshots/ss-desktop-post-blog.jpeg)
+<img src="./screenshots/ss-desktop-home.jpg" width=50%> <img src="./screenshots/ss-desktop-blog.jpeg" width=50%> <img src="./screenshots/ss-desktop-edit-blog.jpeg" width=50%> <img src="./screenshots/ss-desktop-post-blog.jpeg" width=50%>
 The appearance is also very simple because to make the user focus on some writing in the middle of the screen and the blog content must only be the point.
 
 
 ## Mobile view
-![Alt text](screenshots/ss-mobile-home.jpg)![Alt text](screenshots/ss-mobile-blog.jpeg)![Alt text](screenshots/ss-mobile-edit-blog.jpeg)![Alt text](screenshots/ss-mobile-post-blog.jpeg)
+<img src="./screenshots/ss-mobile-home.jpg" width=30%> <img src="./screenshots/ss-mobile-blog.jpeg" width=30%> <img src="./screenshots/ss-mobile-edit-blog.jpeg" width=30%> <img src="./screenshots/ss-mobile-post-blog.jpeg" width=30%>
 ## Final
 From this application I learned about a CRUD system in a database and also inputting long text and making complex applications that can look simple.
 
