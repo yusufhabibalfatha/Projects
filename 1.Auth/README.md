@@ -4,9 +4,7 @@ Small application that performs authentication. Login and Signup using the help 
 
 
 ## Desktop view
-<img src="./screenshots/ss-desktop-signup.png" width=40%>
-<img src="./screenshots/ss-desktop-login.png" width=40%>
-<img src="./screenshots/ss-desktop-homepage.png" width=40%>
+<img src="./screenshots/ss-desktop-signup.png" width=50%><img src="./screenshots/ss-desktop-login.png" width=50%><img src="./screenshots/ss-desktop-homepage.png" width=50%>
 This application has a very simple theme, referring to Apple's appearance or design. Although there are still many drawbacks, such as the colors being too bright, which can damage the eyes a bit.
 
 
