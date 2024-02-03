@@ -9,7 +9,7 @@ This application has a very simple theme, referring to Apple's appearance or des
 
 
 ## Mobile view
-<img src="./screenshots/ss-mobile-signup.png" width=50%><img src="./screenshots/ss-mobile-login.png" width=50%>
+<img src="./screenshots/ss-mobile-signup.png" width=30%><img src="./screenshots/ss-mobile-login.png" width=30%>
 
 ## Final
 From this project we can learn about hashes, tokens, compare passwords, and so on regarding user passwords. But from here also handling user passwords is very crucial and you have to be careful
